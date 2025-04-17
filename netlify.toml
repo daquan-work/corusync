@@ -1,13 +1,24 @@
 [build]
   publish = "web"
-  command = ""
+  command = "echo 'Static site deployment - no build command needed'"
 
 [build.environment]
   NODE_VERSION = "18"
   GO_VERSION = "1.20.0"
   GO_IMPORT_PATH = "github.com/daquan-work/corusync"
 
+# Redirect all paths to index.html for client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Build context specific settings
+[context.production]
+  publish = "web"
+
+[context.deploy-preview]
+  publish = "web"
+
+[context.branch-deploy]
+  publish = "web"
