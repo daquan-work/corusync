@@ -4,7 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  GO_VERSION = "1.19"
+  GO_VERSION = "1.19.0"
+  GO_IMPORT_PATH = "github.com/daquan-work/corusync"
 
 [[redirects]]
   from = "/*"
